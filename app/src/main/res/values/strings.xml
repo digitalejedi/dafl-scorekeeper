@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DAFL Scorekeeper</string>
+    <string name="button_new_game">New Game</string>
+    <string name="button_previous_games">Previous Games</string>
+    <string name="menu_home">Start</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="tool_placeholder">Placeholder</string>
+</resources>
