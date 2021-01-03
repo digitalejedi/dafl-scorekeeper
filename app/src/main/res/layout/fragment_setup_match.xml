@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fragment_setup_match_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_setup_match_home_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_select_home_team"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_setup_match_guideline"
+        app:layout_constraintEnd_toStartOf="@id/fragment_setup_match_away_team" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_setup_match_away_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_select_away_team"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_setup_match_home_team"
+        app:layout_constraintStart_toEndOf="@id/fragment_setup_match_home_team" />
+
+    <EditText
+        android:id="@+id/fragment_setup_match_round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tooltipText="@string/placeholder_round_number"
+        android:inputType="number"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_setup_match_home_team"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/fragment_setup_match_round_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_round"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_setup_match_round"
+        android:labelFor="@id/fragment_setup_match_round" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_new_match"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_setup_match_round_label" />
+
+    <TextView
+        android:id="@+id/fragment_setup_match_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_setup_match_guideline"
+        android:layout_marginTop="30dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="fragment_setup_match_year,fragment_setup_match_month,fragment_setup_match_day" />
+
+    <EditText
+        android:id="@+id/fragment_setup_match_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tooltipText="@string/placeholder_year"
+        android:hint="@string/placeholder_year"
+        android:maxLength="4"
+        android:inputType="number"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/fragment_setup_match_date"
+        app:layout_constraintEnd_toStartOf="@id/fragment_setup_match_month"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/fragment_setup_match_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tooltipText="@string/placeholder_month"
+        android:hint="@string/placeholder_month"
+        android:maxLength="2"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/fragment_setup_match_year"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_setup_match_year"
+        app:layout_constraintEnd_toStartOf="@id/fragment_setup_match_day"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/fragment_setup_match_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tooltipText="@string/placeholder_day"
+        android:hint="@string/placeholder_day"
+        android:maxLength="2"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/fragment_setup_match_month"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_setup_match_year"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAutofill="no" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_setup_match_submit_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_submit_game"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

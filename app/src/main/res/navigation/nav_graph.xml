@@ -9,5 +9,44 @@
         android:id="@+id/startFragment"
         android:name="dk.malone.dafl.scorekeeper.fragment.StartFragment"
         android:label="StartFragment"
-        tools:layout="@layout/fragment_start" />
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_setupMatchFragment"
+            app:destination="@id/setupMatchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupMatchFragment"
+        android:name="dk.malone.dafl.scorekeeper.fragment.SetupMatchFragment"
+        android:label="SetupMatchFragment"
+        tools:layout="@layout/fragment_setup_match" >
+        <action
+            android:id="@+id/action_setupMatchFragment_to_setupTeamFragment"
+            app:destination="@id/setupTeamFragment" >
+            <argument
+                android:name="isHome"
+                android:defaultValue="true" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/setupTeamFragment"
+        android:name="dk.malone.dafl.scorekeeper.fragment.SetupTeamFragment"
+        android:label="SetupTeamFragment"
+        tools:layout="@layout/fragment_setup_team" >
+        <action
+            android:id="@+id/action_setupTeamFragment_self"
+            app:destination="@id/setupTeamFragment" >
+            <argument
+                android:name="isHome"
+                android:defaultValue="false" />
+        </action>
+        <argument
+            android:name="isHome"
+            app:argType="boolean" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_setupMatchFragment"
+        app:destination="@id/setupMatchFragment" />
+    <action
+        android:id="@+id/action_global_startFragment"
+        app:destination="@id/startFragment" />
 </navigation>

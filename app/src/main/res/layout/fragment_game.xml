@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fragment_game_guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fragment_game_guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Score buttons -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_game_home_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_goal_capitals"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_behind"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_behind" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_game_home_behind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_behind_capitals"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_guideline_horizontal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_game_away_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_goal_capitals"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_guideline_horizontal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_game_away_behind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_behind_capitals"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_goal"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_goal" />
+
+    <!-- Home score section -->
+
+    <TextView
+        android:id="@+id/fragment_game_home_total_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_home_behind" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_total_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_total_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_total_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_total_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_total_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_total_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_total_label"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_total_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_total_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_4th_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_home_total_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_4th_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_4th_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_4th_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_4th_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_4th_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_4th_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_4th_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q4_label"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_4th_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_4th_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_3rd_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_home_4th_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_3rd_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_3rd_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_3rd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_3rd_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_3rd_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_3rd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_3rd_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q3_label"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_3rd_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_3rd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_2nd_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_home_3rd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_2nd_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_2nd_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_2nd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_2nd_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_2nd_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_2nd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_2nd_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q2_label"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_2nd_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_2nd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_1st_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_home_2nd_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_1st_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_1st_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_1st_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_1st_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_1st_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_1st_score" />
+
+    <TextView
+        android:id="@+id/fragment_game_home_1st_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q1_label"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_game_home_1st_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_home_1st_score" />
+
+    <!-- Away score section -->
+
+    <TextView
+        android:id="@+id/fragment_game_away_total_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_away_goal" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_total_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_total_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_total_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_total_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginStart="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_total_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_total_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_total_label"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_total_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_total_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_4th_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_away_total_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_4th_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_4th_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_4th_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_4th_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginStart="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_4th_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_4th_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_4th_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q4_label"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_4th_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_4th_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_3rd_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_away_4th_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_3rd_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_3rd_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_3rd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_3rd_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginStart="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_3rd_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_3rd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_3rd_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q3_label"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_3rd_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_3rd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_2nd_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_away_3rd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_2nd_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_2nd_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_2nd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_2nd_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginStart="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_2nd_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_2nd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_2nd_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q2_label"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_2nd_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_2nd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_1st_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_guideline_vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_away_2nd_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_1st_behinds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_goals_behinds_nil"
+        android:layout_marginStart="5dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_1st_goals"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_1st_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_1st_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_score_nil"
+        android:layout_marginStart="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_1st_behinds"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_1st_goals" />
+
+    <TextView
+        android:id="@+id/fragment_game_away_1st_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_q1_label"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/fragment_game_away_1st_score"
+        app:layout_constraintBaseline_toBaselineOf="@id/fragment_game_away_1st_goals" />
+
+    <!-- Top screen -->
+
+    <TextView
+        android:id="@+id/fragment_game_xx_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeholder_xx_by_yyy_points"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/fragment_game_home_1st_score"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
